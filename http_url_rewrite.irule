@@ -1,0 +1,10 @@
+when HTTP_REQUEST {
+    switch [HTTP::host] {
+    "web.test.com" { 
+        HTTP::respond 302 Location "https://web.test.com[HTTP::uri]"
+    }
+    "test.test.com" { 
+        HTTP::respond 302 Location "https://test.test.com:40443[HTTP::uri]"
+    }
+    }
+ 
