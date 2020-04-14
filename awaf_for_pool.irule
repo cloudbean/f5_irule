@@ -1,0 +1,13 @@
+when HTTP_REQUEST {
+ ASM::disable
+ switch -glob [string tolower [HTTP::host]] {
+ "test1.test.com" {
+    pool pool_test_80
+    ASM::enable /Common/awaf_policy_1
+ }
+ "test2.test.com" {
+    pool pool_test2_80
+    ASM::enable /Common/awaf_policy_2
+ }
+ }
+ }
