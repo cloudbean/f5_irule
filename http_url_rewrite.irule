@@ -6,5 +6,5 @@ when HTTP_REQUEST {
     "test.test.com" { 
         HTTP::respond 302 Location "https://test.test.com:40443[HTTP::uri]"
     }
-    }
+   }
  
